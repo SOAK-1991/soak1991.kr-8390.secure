@@ -21,11 +21,12 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 360px;
             text-align: center;
+            
         }
         input[type="text"], input[type="password"] {
             width: 80%;
-            padding: 10px;
-            margin: 10px 0;
+            padding: 15px;
+            margin: 8px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
@@ -42,6 +43,8 @@
             background-color: RGB(164,199,255);
         }
         img {
+            display: block;
+            margin: auto;
             width: 100px; /* 이미지의 너비를 100px로 설정 */
             height: auto; /* 비율을 유지하며 자동으로 높이 조절 */
             border-radius: 10px; /* 이미지 모서리를 둥글게 */
@@ -50,11 +53,26 @@
 </head>
 <body>
     <div class="login-container">
-        <h2>Enter인</h2>
-        <input type="text" id="username" placeholder="사용자 이름" required>
-        <input type="password" id="password" placeholder="비밀번호" required>
-        <button onclick="login()">로그인</button>
+        <h2>Enter the Personal Data</h2>
+        <input type="text" id="username" placeholder="Agent ID" required>
+        <input type="password" id="password" placeholder="Activation Code" required>
+        <button onclick="login()">Access the System</button>
     </div>
+
+    <div>
+        <style>
+            /* absolute를 사용하기 위해 감싸는 영역에 position:relative 적용 */
+            .img_area{position:relative; height:50px;}
+            .img_area img{position:absolute; top:50%; margin-top:-200px; height:100px;}
+            .img_area img{position:horizontal; left:-245px;}
+         </style>
+         <body>
+            <div class="img_area">
+               <img src="assets/img/SOAK logo 4.png" alt="logo">
+            </div>
+         </body>
+    </div>
+
     <script>
         function login() {
             const username = document.getElementById('username').value;
@@ -66,7 +84,7 @@
             if (username === 'Keeper_No.3' && password === 'keep3no.864923901223525192145447') { // 예시: 사용자 이름과 비밀번호
                 window.location.href = 'https://soak-1991.github.io/soak1991.kr-8390.main/'; // 로그인 성공 시 대시보드 페이지로 이동
             } else {
-                alert('사용자 이름 또는 비밀번호가 잘못되었습니다.');
+                alert('ADMIN: Wrong Agent ID or Activation Code. Please check it again.');
             }
         }
     </script>
